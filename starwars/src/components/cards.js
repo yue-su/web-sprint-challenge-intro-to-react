@@ -1,13 +1,25 @@
-import React from 'react';
-import '../App.css';
+import React from "react"
+import "../App.css"
+import Card from "./card"
+import styled from "styled-components"
 
+const StyledCards = styled.div`
+  background-color: #abd1c6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`
 
 function Cards(props) {
-    return (
-        <div>
-            
-        </div>
-    )
+  const { characters } = props
+
+  return (
+    <StyledCards>
+      {characters.map((item) => {
+        return <Card key={item.id} character={item} />
+      })}
+    </StyledCards>
+  )
 }
 
 export default Cards

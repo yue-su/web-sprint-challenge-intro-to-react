@@ -14,9 +14,15 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  const [character, setCharater] = useState([])
+  const [characters, setCharaters] = useState([])
 
   useEffect(() => {
+    axios.get(apiKey)
+      .then((res) => {
+        setCharaters(res.data.results)
+        console.log(res.data.results)
+      })
+      .catch((err) => console.log(err))
     
   }, [])
 
@@ -24,7 +30,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Cards />
+      <Cards characters={characters}/>
     </div>
   );
 }
