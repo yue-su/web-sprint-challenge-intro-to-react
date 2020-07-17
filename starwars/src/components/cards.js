@@ -1,6 +1,6 @@
 import React from "react"
 import "../App.css"
-import Card from "./card"
+import Character from "./character"
 import styled from "styled-components"
 
 const StyledCards = styled.div`
@@ -16,7 +16,7 @@ function Cards(props) {
   return (
     <StyledCards>
       {characters.map((item) => {
-        return <Card key={item.id} character={item} />
+        return <Character key={item.id} character={item} />
       })}
     </StyledCards>
   )
