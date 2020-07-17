@@ -17,7 +17,7 @@ const StyledHeader = styled.div`
 function Header(props) {
   return (
     <StyledHeader>
-      <img src={require("../images/pngwing.png")} alt="icon" />
+      <img src={require("../images/pngwing.png")} alt="icon" clasName="icon" />
       <h1>Rick and Morty</h1>
     </StyledHeader>
   )
